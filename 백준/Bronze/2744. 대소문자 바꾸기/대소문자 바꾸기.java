@@ -1,13 +1,16 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
 
-public class Main{
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+public class Main {
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		
 		char b;
 		
-		String a = sc.next();
+		String a = br.readLine();
 		
 		for (int i = 0; i < a.length(); i++) {
 			int ascll = a.charAt(i);
