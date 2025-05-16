@@ -2,15 +2,12 @@ import java.util.Scanner;
 
 public class Main {
     public static int gcd(int a,int b){
-
-        int mok = a / b;
-        int na = a % b;
-
-        if (na==0) {
+        if (a%b==0) {
             return b;
         }
-        return gcd(b,na);
+        return gcd(b,a % b);
     }
+
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -18,14 +15,13 @@ public class Main {
         int a = sc.nextInt();
         int b = sc.nextInt();
 
-        if (a>=b) {
-            int gcd_ = gcd(a,b);
-            System.out.println(gcd_);
-            System.out.println(a * b / gcd_);
+        if (a>=b){
+            System.out.println(gcd(a,b));
+            System.out.println(a * b / gcd(a,b));
         }else{
-            int gcd_ = gcd(b,a);
-            System.out.println(gcd_);
-            System.out.println(a * b / gcd_);
+            System.out.println(gcd(a,b));
+            System.out.println(a * b / gcd(a,b));
         }
+
     }
 }
